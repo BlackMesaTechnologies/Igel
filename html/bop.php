@@ -151,10 +151,23 @@ else if ($_GET['req'] == 'addcmd') {
 
 else if ($_GET['req'] == 'addfun' or $_GET['req'] == 'add') {
   /* not working as of 5 pm 12 June */
+  /* but working as of 3 July */
   $req = "  <run xmlns='http://basex.org/rest'>\n"
     . "     <text>updates.xq</text>\n"
     . "     <parameter name='wrap' value='yes'/>\n"
     . "     <variable name='req' value='add'/>\n"
+    . "     <variable name='newkey' value='" . $_GET['newkey'] . "'/>\n"
+    . "     <variable name='newloc' value='" . $_GET['newloc'] . "'/>\n"
+    . "  </run>\n";
+  $go = "yes";
+  $responsetype = 'text/xml';
+} 
+
+else if ($_GET['req'] == 'addlocal') {
+  $req = "  <run xmlns='http://basex.org/rest'>\n"
+    . "     <text>updates.xq</text>\n"
+    . "     <parameter name='wrap' value='yes'/>\n"
+    . "     <variable name='req' value='addlocal'/>\n"
     . "     <variable name='newkey' value='" . $_GET['newkey'] . "'/>\n"
     . "     <variable name='newloc' value='" . $_GET['newloc'] . "'/>\n"
     . "  </run>\n";

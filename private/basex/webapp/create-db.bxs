@@ -1,0 +1,11 @@
+# Create db (BaseX command script)
+
+# This script is part of Igel, an interactive 
+# document-grammar tool.  For license information,
+# see ../../../License.
+
+# Revisions:
+# 2013-07-03 : CMSMcQ : initial version (experiment)
+
+create db grammars
+list grammars

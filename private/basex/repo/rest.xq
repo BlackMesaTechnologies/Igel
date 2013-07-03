@@ -175,13 +175,13 @@ declare updating function rest:add-dtd(
   $newkey as xs:string,
   $msg as element()
 ) {
-  if ($msg/@status = "error alreadyhere") then 
+  if ($msg/@class = "error alreadyhere") then 
     error(fn:QName($rest:nsuri,'rest:dtd-already-in-db'))
-  else if ($msg/@status = "error keyinuse") then
+  else if ($msg/@class = "error keyinuse") then
     error(fn:QName($rest:nsuri,'rest:key-already-in-use'))
-  else if ($msg/@status = "error http") then
+  else if ($msg/@class = "error http") then
     error(fn:QName($rest:nsuri,'rest:http-error-invoking-dpp'))
-  else if ($msg/@status = "error dpp") then
+  else if ($msg/@class = "error dpp") then
     error(fn:QName($rest:nsuri,'rest:dpp-returned-error'))
   else if (empty($node)) then
     error(fn:QName($rest:nsuri,'rest:empty-grammar'))
@@ -201,6 +201,45 @@ declare updating function rest:add (
   (: $addenda now contains a status message and possibly
      the XML representation of a DTD :)
   return rest:add-dtd($addenda[position() > 1], $dtdkey, $addenda[1])
+};
+
+declare updating function rest:add-local(
+  $filename as xs:string,
+  $dtdkey as xs:string
+) {
+  (: $filename is the name of a DTD in XML form, in 
+     /opt/igel/private/misc/dtdxml.  We want to add it
+     to the database. :)
+       
+      (: check that arguments are OK :)
+  if (collection($rest:grammars)/igel:dtd[@loc eq $filename]) then
+      rest:add-dtd((),
+                   $dtdkey,
+                   <p class="error alreadyhere">{
+                     concat("The DTD ", $filename, 
+                     ' is already part of the collection.')}</p>)
+  else if (collection($rest:grammars)/igel:dtd[@key eq $dtdkey]) then
+      rest:add-dtd((), $dtdkey,
+                   <p class="error keyinuse">{
+                     concat("The key ", $dtdkey, 
+                     ' is already in use in the database.  ',
+                     'Choose another key!')}</p>
+                 )
+  else let $dtdxml := <igel:dtd loc="{$filename}" 
+                             uri="{$filename}"
+                             key="{$dtdkey}"
+                             dadd="{adjust-date-to-timezone(current-date(),())}" 
+                             dtadd="{current-dateTime()}">{
+                               doc(concat(
+                                    'file://',
+                                    '/opt/igel/private/misc/dtdxml/',
+                                    $filename))}</igel:dtd>
+       return rest:add-dtd($dtdxml,
+                           $dtdkey,
+                           <p class="ok">Inserted 
+                             {$filename} successfully 
+                             ({ count($dtdxml/descendant-or-self::node())
+                             } nodes).</p>) 
 };
 
 (:                            

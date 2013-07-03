@@ -1,0 +1,12 @@
+# Refresh repo (BaseX command script)
+
+# This script is part of Igel, an interactive 
+# document-grammar tool.  For license information,
+# see ../../../License.
+
+# Revisions:
+# 2013-07-03 : CMSMcQ : initial version (experiment)
+
+repo install /opt/igel/private/basex/repo/rest.xq
+repo install /opt/igel/private/basex/repo/skin.xq
+repo list

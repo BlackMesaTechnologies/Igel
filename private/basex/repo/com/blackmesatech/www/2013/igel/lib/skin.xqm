@@ -46,7 +46,7 @@ import module namespace xslt="http://basex.org/modules/xslt";
 (: Miscellaneous HTML generation routines for standard page furniture. :)
 
 declare namespace rest = 'http://www.blackmesatech.com/2013/igel/lib/rest';
-declare variable $skin:version-number as xs:string := '0.62';
+declare variable $skin:version-number as xs:string := '0.63';
 declare variable $skin:collection as xs:QName := xs:QName("rest:grammars");
 declare variable $skin:decls-to-html as xs:string := 
   "/opt/igel/private/basex/webapp/decls_to_html.xsl";

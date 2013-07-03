@@ -38,9 +38,10 @@
           </a>Igel administration</h1>
       </div>
       <p>This page contains links to simplify some administrative tasks for
-      Igel in BaseX.
-      </p>
-      <div>
+      Igel in BaseX.</p>
+      <p><a href="#init">Initial setup</a> &middot; <a href="#dbmgmt">DB management</a> &middot;
+      <a href="#repo">Repository management</a></p>
+      <div id="dbmgmt">
 	<h2>Database management</h2>
 	<p>[Not fully functional yet, but watch this space.]</p>
 	<dl>
@@ -48,7 +49,6 @@
 	  <dd>Initialize or delete the 'grammars' database:
 	  <a class="btn" href="bop.php?req=make&amp;db=grammars">Create database</a>
 	  <a class="btn" href="bop.php?req=drop&amp;db=grammars">Drop database</a>
-	  &middot;
 	  </dd>
 
 	  <dt>Show / list</dt>
@@ -61,35 +61,64 @@
 	  <dd>Add the indicated DTDs to the 'grammars' database.
 	  <div class="wellknown">
 	    <p>TEI Lite and variations:</p>
-	    <a class="btn" href="bop.php?req=add&amp;newkey=TEILite-P3&amp;newloc=http://www.tei-c.org/Vault/P4/Lite/DTD/teilite.dtd">TEI Lite (P3 / SGML)</a>
-	    <a class="btn" href="bop.php?req=add&amp;newkey=TEILite-P4&amp;newloc=http://www.tei-c.org/Vault/P4/Lite/DTD/teixlite.dtd">TEI Lite (P4 / XML)</a>
-	    <a class="btn" href="bop.php?req=add&amp;newkey=TEILite-P5&amp;newloc=http://www.tei-c.org/Vault/P5/current/xml/tei/custom/schema/dtd/tei_lite.dtd">TEI Lite (P5)</a>
+	    <p>
+	    <a class="btn" 
+	       href="bop.php?req=add&amp;newkey=TEILite-P3&amp;newloc=http://www.tei-c.org/Vault/P4/Lite/DTD/teilite.dtd"
+	       >TEI Lite (P3 / SGML)</a>
+	    <a class="btn" 
+	       href="bop.php?req=add&amp;newkey=TEILite-P4&amp;newloc=http://www.tei-c.org/Vault/P4/Lite/DTD/teixlite.dtd"
+	       >TEI Lite (P4 / XML)</a>
+	    <a class="btn" 
+	       href="bop.php?req=add&amp;newkey=TEILite-P5&amp;newloc=http://www.tei-c.org/Vault/P5/current/xml/tei/custom/schema/dtd/tei_lite.dtd"
+	       >TEI Lite (P5)</a>
 
-	    <a class="btn" href="bop.php?req=add&amp;newkey=SWeb&amp;newloc=http://blackmesatech.com/lib/swebxml.dtd">TEI Lite + SWeb</a>
+	    <a class="btn" 
+	       href="bop.php?req=add&amp;newkey=SWeb&amp;newloc=http://blackmesatech.com/lib/swebxml.dtd"
+	       >TEI Lite + SWeb</a>
+	    <br/>
+	    <a class="btn" 
+		  href="bop.php?req=addlocal&amp;newkey=I5&amp;newloc=i5.dtd.xml"
+		  >IDS I5</a>
+	    <a class="btn" 
+		  href="bop.php?req=addlocal&amp;newkey=BF&amp;newloc=basisformat.dtd.xml"
+		  >BBAW Basisformat</a>
+	    </p>
 	  </div>
 	  <div class="wellknown">
 	    <p>Corpus Encoding Standard:</p>
-	    <a class="btn" href="bop.php?req=add&amp;newkey=XCES-doc&amp;newloc=http://www.xces.org/dtd/xcesDoc.dtd">XCES Doc</a>
-	    <a class="btn" href="bop.php?req=add&amp;newkey=XCES-ana&amp;newloc=http://www.xces.org/dtd/xcesAna.dtd">XCES Ana</a>
-	    <a class="btn" href="bop.php?req=add&amp;newkey=XCES-align&amp;newloc=http://www.xces.org/dtd/xcesAlign.dtd">XCES Align</a>
-	    <a class="btn" href="bop.php?req=add&amp;newkey=IDS-XCES-1&amp;newloc=http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">IDS-XCES</a>
+	    <a class="btn" href="bop.php?req=add&amp;newkey=XCES-doc&amp;newloc=http://www.xces.org/dtd/xcesDoc.dtd"
+	       >XCES Doc</a>
+	    <a class="btn" href="bop.php?req=add&amp;newkey=XCES-ana&amp;newloc=http://www.xces.org/dtd/xcesAna.dtd"
+	       >XCES Ana</a>
+	    <a class="btn" href="bop.php?req=add&amp;newkey=XCES-align&amp;newloc=http://www.xces.org/dtd/xcesAlign.dtd"
+	       >XCES Align</a>
+	    <a class="btn" href="bop.php?req=add&amp;newkey=IDS-XCES-1&amp;newloc=http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd"
+	       >IDS-XCES</a>
 	  </div>
 	  </dd>
 	</dl>
       </div>
-      <div>
+      <div id="repo">
 	<h2>XQuery module repository management</h2>
 	<p>There has <em>got</em> to be a better way to manage these tasks,
 	but for now, this is what we have.</p>
 	<dl>
 	  <dt>
-	    <a href="http://localhost:8984/rest?command=repo+install+/opt/igel/private/basex/repo/rest.xq"
+	    <a class="btn" 
+	       href="http://localhost:8984/rest?command=run+webapp/refresh-repo.bxs"
+	       >Install all</a>
+	  </dt>
+	  <dd>Install the 'rest' module (rest.xq) and the 'skin' module (skin.xq) in the BaseX module repository.</dd>
+	  <dt>
+	    <a class="btn"
+	       href="http://localhost:8984/rest?command=repo+install+/opt/igel/private/basex/repo/rest.xq"
 	       >Install rest.xq</a>
 	  </dt>
 	  <dd>Install the 'rest' module (rest.xq) in the BaseX module repository.</dd>
 
 	  <dt>
-	    <a href="http://localhost:8984/rest?command=repo+install+/opt/igel/private/basex/repo/skin.xq"
+	    <a class="btn"
+	       href="http://localhost:8984/rest?command=repo+install+/opt/igel/private/basex/repo/skin.xq"
 	       >Install skin.xq</a>
 	  </dt>
 	  <dd>Install the 'skin' module (skin.xq) in the BaseX module repository.</dd>
@@ -101,20 +130,33 @@
 	  <dd>Show list (text/plain) of the contents of the BaseX module repository.</dd>
 	</dl>
       </div>
+      <div id="init">
+	<h2>Initial setup</h2>
+	<p>
+	<span>1 <a class="btn" href="bop.php?req=make&amp;db=grammars">Create database</a></span>
+	&middot;
+	<span>2 <a class="btn" 
+	href="http://localhost:8984/rest?command=run+webapp/refresh-repo.bxs"
+	>Install queries in repository</a></span>
+	&middot;
+	<span>3 <a href="#dbmgmt">Add grammars</a></span>
+	&middot;
+	<span>4 <a href="#dbmgmt">Check status</a></span>
+	</p>
+      </div>
       
       <p>Go back to 
       <a href="http://localhost/igel/"
 	 >Igel home</a>.</p>
     </div>
     <div class="todo"><b>To do:</b>
-    provide larger list of well known DTDs;
+    Provide larger list of well known DTDs;
     pre-load most of them.  Specifically:  add 
     <ul>
-      <li>I5</li>
-      <li>BBAW vocabulary</li>
       <li>various flavors of HTML</li>
       <li>various flavors of JATS</li>
     </ul>
+    Define admin (r/w) and query (r/o) users for BaseX server.
     </div>
     <div class="feedback-invite">
     Got ideas for improvements?  Things you'd like to be able to do from this page?

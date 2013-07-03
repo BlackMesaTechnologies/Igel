@@ -53,4 +53,5 @@ declare variable $newkey as xs:string external;
 declare variable $newloc as xs:string external;
 
 if ($req eq 'add') then rest:add($newloc,$newkey)
+else if ($req eq 'addlocal') then rest:add-local($newloc,$newkey)
 else ()
