@@ -1,0 +1,141 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Igel administration</title>
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="lib/bootstrap/css/bootstrap-responsive.css" rel="stylesheet"/>
+    <link href="lib/css/main.css" rel="stylesheet"/>
+    <style type="text/css">
+      p.date {
+        font-style: italic;
+      }
+      h2 {
+        font-size:  140%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <!--*
+          <a class="brand" id="title" href="#">Document Grammar Comparator</a>
+          *-->
+        <div style="padding-left: 0.25in;">
+          <a class="nav" href="bop.php?req=page&amp;page=home">Home</a>
+          <a class="nav" href="bop.php?req=page&amp;page=grammarlist">Grammars</a>
+          <a class="nav" href="bop.php?req=page&amp;page=elements">Elements</a>
+          <a class="nav" href="bop.php?req=page&amp;page=attributes">Attributes</a>
+          <a class="nav" href="bop.php?req=page&amp;page=notations">Notations</a>
+          <a class="nav" href="bop.php?req=page&amp;page=pes">Parameter entities</a>
+          <a class="nav" href="bop.php?req=page&amp;page=admin.html">Administration</a>
+        </div>
+      </div>
+    </div>
+    <div class="container" id="main">
+      <div class="page-header">
+        <h1 id="page-h1">
+          <a href="/default/index">
+            <img id="mascot" src="lib/images/ClausRebler.320x213.jpg" alt="A young hedgehog" />
+          </a>Igel administration</h1>
+      </div>
+      <p>This page contains links to simplify some administrative tasks for
+      Igel in BaseX.
+      </p>
+      <div>
+	<h2>Database management</h2>
+	<p>[Not fully functional yet, but watch this space.]</p>
+	<dl>
+	  <dt>Database create / delete</dt>
+	  <dd>Initialize or delete the 'grammars' database:
+	  <a class="btn" href="bop.php?req=make&amp;db=grammars">Create database</a>
+	  <a class="btn" href="bop.php?req=drop&amp;db=grammars">Drop database</a>
+	  &middot;
+	  </dd>
+
+	  <dt>Show / list</dt>
+	  <dd>For status checking: show currently defined
+	  <a href="http://localhost:8984/rest/">databases</a>
+	  or 
+	  <a href="http://localhost:8984/rest?query=&lt;grammars>{for $x in collection('grammars')/* return &lt;grammar key='{$x/@key}'>{$x/@loc}&lt;/grammar>}&lt;/grammars>">grammars</a></dd>
+
+	  <dt>Add grammars to database</dt>
+	  <dd>Add the indicated DTDs to the 'grammars' database.
+	  <div class="wellknown">
+	    <p>TEI Lite and variations:</p>
+	    <a class="btn" href="bop.php?req=add&amp;newkey=TEILite-P3&amp;newloc=http://www.tei-c.org/Vault/P4/Lite/DTD/teilite.dtd">TEI Lite (P3 / SGML)</a>
+	    <a class="btn" href="bop.php?req=add&amp;newkey=TEILite-P4&amp;newloc=http://www.tei-c.org/Vault/P4/Lite/DTD/teixlite.dtd">TEI Lite (P4 / XML)</a>
+	    <a class="btn" href="bop.php?req=add&amp;newkey=TEILite-P5&amp;newloc=http://www.tei-c.org/Vault/P5/current/xml/tei/custom/schema/dtd/tei_lite.dtd">TEI Lite (P5)</a>
+
+	    <a class="btn" href="bop.php?req=add&amp;newkey=SWeb&amp;newloc=http://blackmesatech.com/lib/swebxml.dtd">TEI Lite + SWeb</a>
+	  </div>
+	  <div class="wellknown">
+	    <p>Corpus Encoding Standard:</p>
+	    <a class="btn" href="bop.php?req=add&amp;newkey=XCES-doc&amp;newloc=http://www.xces.org/dtd/xcesDoc.dtd">XCES Doc</a>
+	    <a class="btn" href="bop.php?req=add&amp;newkey=XCES-ana&amp;newloc=http://www.xces.org/dtd/xcesAna.dtd">XCES Ana</a>
+	    <a class="btn" href="bop.php?req=add&amp;newkey=XCES-align&amp;newloc=http://www.xces.org/dtd/xcesAlign.dtd">XCES Align</a>
+	    <a class="btn" href="bop.php?req=add&amp;newkey=IDS-XCES-1&amp;newloc=http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">IDS-XCES</a>
+	  </div>
+	  </dd>
+	</dl>
+      </div>
+      <div>
+	<h2>XQuery module repository management</h2>
+	<p>There has <em>got</em> to be a better way to manage these tasks,
+	but for now, this is what we have.</p>
+	<dl>
+	  <dt>
+	    <a href="http://localhost:8984/rest?command=repo+install+/opt/igel/private/basex/repo/rest.xq"
+	       >Install rest.xq</a>
+	  </dt>
+	  <dd>Install the 'rest' module (rest.xq) in the BaseX module repository.</dd>
+
+	  <dt>
+	    <a href="http://localhost:8984/rest?command=repo+install+/opt/igel/private/basex/repo/skin.xq"
+	       >Install skin.xq</a>
+	  </dt>
+	  <dd>Install the 'skin' module (skin.xq) in the BaseX module repository.</dd>
+
+	  <dt>
+	    <a href="http://localhost:8984/rest?command=repo+list"
+	       >List repository contents.</a>
+	  </dt>
+	  <dd>Show list (text/plain) of the contents of the BaseX module repository.</dd>
+	</dl>
+      </div>
+      
+      <p>Go back to 
+      <a href="http://localhost/igel/"
+	 >Igel home</a>.</p>
+    </div>
+    <div class="todo"><b>To do:</b>
+    provide larger list of well known DTDs;
+    pre-load most of them.  Specifically:  add 
+    <ul>
+      <li>I5</li>
+      <li>BBAW vocabulary</li>
+      <li>various flavors of HTML</li>
+      <li>various flavors of JATS</li>
+    </ul>
+    </div>
+    <div class="feedback-invite">
+    Got ideas for improvements?  Things you'd like to be able to do from this page?
+    <a href="mailto:cmsmcq+igel@blackmesatech.com">Write us!</a>
+    </div>
+    <div class="modal-footer" style="font-size: 80%; margin-top: 2em;">
+      <div>
+        <a href="http://www.flickr.com/photos/zunami/2038774508/in/photostream/">Hedgehog</a>
+            © 2007
+            by <a href="http://www.flickr.com/people/zunami/">Claus Rebler</a>,
+            used by permission
+            (<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>).
+        </div>
+      <div>Igel was developed by <a href="http://blackmesatech.com/">Black Mesa Technologies, LLC</a>
+      </div>
+      <div>
+          Igel uses the
+          XQuery engine Sausalito by <a href="http://www.28msec.com/">28msec</a>.
+          Development of Igel supported by 
+          <a href="http://www.ids-mannheim.de/">Institut für Deutsche Sprache</a>, Mannheim.
+        </div>
+    </div>
+  </body> 
+</html>

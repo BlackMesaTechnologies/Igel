@@ -1,0 +1,15 @@
+# 2013-06-13
+# The only reason we need this is to password-protect the admin page 
+
+<Files "admin.html">
+
+AuthType Basic
+AuthName "Igel Admin Area - Password Required"
+AuthUserFile /opt/igel/private/misc/htaccess/.htpasswd
+AuthGroupFile /opt/igel/private/misc/htaccess/.htgroups
+
+# require valid-user
+require group admin
+
+</Files>
+

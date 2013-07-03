@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/DTD/strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Zorba - The XQuery Processor</title><link rel="shortcut icon" href="/favicon.ico"><link media="all" rel="stylesheet" href="/css/cute_profiles31.css" type="text/css"><link media="all" rel="stylesheet" href="/css/all.css" type="text/css"><link media="all" rel="stylesheet" href="/css/article.css" type="text/css"><link media="all" rel="stylesheet" href="/css/highlighter.css" type="text/css"><link media="all" rel="stylesheet" href="/css/xqdoc.css" type="text/css"><link media="all" rel="stylesheet" href="/css/jquery-ui-1.8.17.custom.css" type="text/css"><!--[if lt IE 8]><link rel="stylesheet" type="text/css" href="{$html:static}/css/ie.css" media="screen"/><![endif]--><script type="text/javascript" src="/js/jquery-1.6.2.js"></script><script type="text/javascript" src="/js/slides.jquery.js"></script><script type="text/javascript" src="/js/main.js"></script><script type="text/javascript" src="/js/jquery-ui-1.8.17.custom.min.js"></script><script src="http://www.google.com/js/gweb/analytics/autotrack.js" type="text/javascript"></script><script src="/ace/ace.js" type="text/javascript" charset="utf-8"></script><script src="/ace/theme-textmate.js" type="text/javascript" charset="utf-8"></script><script src="/ace/mode-xml.js" type="text/javascript" charset="utf-8"></script><script src="/ace/mode-xquery.js" type="text/javascript" charset="utf-8"></script><script src="/ace/mode-c_cpp.js" type="text/javascript" charset="utf-8"></script><script src="/ace/mode-php.js" type="text/javascript" charset="utf-8"></script><script src="/ace/mode-java.js" type="text/javascript" charset="utf-8"></script><script src="/ace/mode-python.js" type="text/javascript" charset="utf-8"></script><script src="/ace/mode-ruby.js" type="text/javascript" charset="utf-8"></script><script type="text/javascript">//
+  new gweb.analytics.AutoTrack({profile: 'UA-4281090-1'});
+  //</script><script type="text/javascript">//
+  var uvOptions = {};
+  (function() {
+    var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
+    uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/IesQ7j7wvZHStIegYtAiA.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
+  })();
+//</script><script type="text/javascript">//
+$(function(){
+  //$.get("/news/notification-count", function(data){
+  //  var count = parseInt(data);
+  //  if(count > 0) {
+  //    $("#header").append("<div class='counter'><div>"+count+"</div></div>");
+  //  }
+  //});
+});
+//</script></head><body><div id="wrapper"><div id="header"><h1 class="logo"><a href="/">Zorba The Query Processor</a></h1><ul id="nav"><li><a class="documentation" href="/html/documentation">Documentation</a></li><li><a class="demo" href="/html/demo">Live Demo</a></li><li><a class="modules" href="/html/modules">Modules</a></li><li><a class="blog" href="/html/blog">Blog</a></li><li><a class="code" href="/html/code">Code</a></li><li><a class="download" href="/html/download">Download</a></li></ul><div class="cute_profiles_sprite" style="position: absolute; z-index:100; top: 120px;left: 0px;"><a title="Twitter" class="cute_profiles_twitter" href="http://twitter.com/ZorbaXQuery" target="_blank" style="text-decoration:none;"> </a><a title="Linkedin" class="cute_profiles_linkedin" href="http://www.linkedin.com/groups/Zorba-4311029" target="_blank" style="text-decoration:none;"> </a><a title="Slideshare" class="cute_profiles_slideshare" href="http://www.slideshare.net/search/slideshow?searchfrom=header&amp;q=zorba+xquery" target="_blank" style="text-decoration:none;"> </a><a title="Googlegroups" class="cute_profiles_google" href="http://groups.google.com/group/zorba-users" target="_blank" style="text-decoration:none;"> </a></div></div><div id="main"><div class="main-holder"><div class="main-frame"><div id="article"><h1>Page Not Found</h1><p>If you believe that this error shouldn't have happened, please report the problem to <a href="mailto:contact@28msec.com">contact@28msec.com</a></p><p><a href="/">Back to the home page</a></p></div></div></div></div><div id="footer"><h3>Zorba is supported by the <a href="/flwor/index">FLWOR Foundation</a> and distributed under <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License, Version 2.0.</a></h3><p>© 2012 Zorba</p><script type="text/javascript">
+/*  */
+var google_conversion_id = 955529696;
+var google_conversion_language = "en";
+var google_conversion_format = "2";
+var google_conversion_color = "ffffff";
+var google_conversion_label = "4V21COj_0gMQ4PPQxwM";
+var google_conversion_value = 0;
+/*  */
+</script><script type="text/javascript" src="http://www.googleadservices.com/pagead/conversion.js"></script><noscript><div style="display:inline"><img height="1" width="1" style="border-style:none" alt="" src="http://www.googleadservices.com/pagead/conversion/955529696/?label=4V21COj_0gMQ4PPQxwM&amp;guid=ON&amp;script=0"></div></noscript></div></div><script type="text/javascript">//
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = '28msec'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+//</script></body></html>

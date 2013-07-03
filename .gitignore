@@ -1,0 +1,14 @@
+# .gitignore file, list here some things that git should not track.
+
+# BaseX log files and data files
+private/basex/data/.logs
+private/basex/data/atv.basex
+private/basex/data/atvl.basex
+private/basex/data/atvr.basex
+private/basex/data/inf.basex
+private/basex/data/tbl.basex
+private/basex/data/tbli.basex
+private/basex/data/txt.basex
+private/basex/data/txtl.basex
+private/basex/data/txtr.basex
+

@@ -1,0 +1,48 @@
+# BaseX 7.6 Property File.
+
+#### To localize:
+#### - Set DBPATH to location for BaseX binary data 
+#### - Set WEBPATH to location for BaseX query data 
+#### - Set USER and PASSWORD to suitable values
+####
+#### For security reasons, DBPATH should normally not be 
+#### Web-accessible, and WEBPATH should either be
+#### inaccessible or carefully protected.  (Obscurity
+#### doesn't guarantee security, but exposing the names of
+#### known queries and their text is just not a good idea.) 
+
+# General Options
+DBPATH = /opt/igel/private/basex/data
+REPOPATH = /opt/igel/private/basex/repo
+
+DEBUG = false
+LANG = English
+LANGKEYS = false
+GLOBALLOCK = false
+
+# Client/Server Architecture
+HOST = localhost
+PORT = 1984
+SERVERPORT = 1984
+EVENTPORT = 1985
+USER = greeter
+PASSWORD = sayhello
+SERVERHOST = 
+PROXYHOST = 
+PROXYPORT = 80
+NONPROXYHOSTS = 
+TIMEOUT = 30
+KEEPALIVE = 600
+PARALLEL = 8
+LOG = true
+LOGMSGMAXLEN = 1000
+
+# HTTP Services
+### as shipped, WEBPATH was here in opt/local
+### WEBPATH = /opt/local/BaseX-7.6/basex/webapp
+WEBPATH = /opt/igel/private/basex/webapp
+RESTXQPATH = restxq
+HTTPLOCAL = false
+STOPPORT = 8985
+
+# Local Options
